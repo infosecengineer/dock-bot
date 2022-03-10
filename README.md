@@ -22,9 +22,9 @@ git pull infosecengineer/dock-bot
 
 cd dock-bot
 
-docker build -t dockbot --network=<your-network> .
+docker build -t dockbot --network=\<your-network\> .
  
-docker run -dit --network=<your-network> --ip=<select-ip> --name discbot dockbot:latest
+docker run -dit --network=\<your-network\> --ip=\<select-ip\> --name discbot dockbot:latest
 
 
   
