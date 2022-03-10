@@ -1,6 +1,7 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+var extra_func = require('./extra_func);
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -22,6 +23,17 @@ logger.info(bot.username + ' - (' + bot.id + ')');
 bot.on('message', function (user, userID, channelID, message, evt) {
 // Our bot needs to know if it will execute a command
 // It will listen for messages that will start with `!`
+
+//doSomething(extra_func.bot_ext());
+
+if (message.substring(0, 1) == '!') {
+    const result = extra_func.bot_ext(message);
+    bot.sendMessage({
+        to: channelID,
+        message: result
+    });
+};
+
 if (message.substring(0, 1) == '!') {
     var args = message.substring(1).split(' ');
     var cmd = args[0];
