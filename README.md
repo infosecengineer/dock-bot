@@ -6,17 +6,30 @@ Basic functionality with ping-pong response so far
 Added in "extra" functionality using a separate file to house additional functions
 
 Bot responds to:
+
+
 !ping
+
 !pang 
 
-### To create and run the docker image and container
+
+
+To create and run the docker image and container
+
+
 
 git pull infosecengineer/dock-bot
+
 cd dock-bot
+
 docker build -t dockbot --network=<your-network> .
+ 
 docker run -dit --network=<your-network> --ip=<select-ip> --name discbot dockbot:latest
 
 
+  
+
+  
   
   
 Resources used to create this:
